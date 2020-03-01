@@ -1,5 +1,5 @@
 main: main.o lexer.o token.o parser.o linkedlist.o
-	gcc $^ -o $@ -fsanitize=address -fno-omit-frame-pointer
+	gcc $^ -o $@
 
 main.o: main.c lexer.h token.h parser.h types.h
 	gcc -g -c $< -o $@

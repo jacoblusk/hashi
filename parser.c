@@ -15,9 +15,9 @@ PPARSER Parser_Create(PLINKED_LIST pTokens) {
 }
 
 VOID __Parser_Advance(PPARSER pParser) {
-    if(pParser->pTokens != NULL) {
+    if(pParser->pTokens->pNext != NULL) {
         pParser->pTokens = pParser->pTokens->pNext;
-        pParser->pCurrentToken = (PTOKEN)pParser->pTokens->pData;
+        pParser->pCurrentToken = (PTOKEN)(pParser->pTokens->pData);
     }
 }
 
